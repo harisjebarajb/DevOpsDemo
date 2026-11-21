@@ -1,0 +1,587 @@
+
+/* =================================
+   1. BASIC SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffdf9;
+    color: #292929;
+    line-height: 1.6;
+}
+
+:root {
+    --orange: #ff6b35;
+    --dark: #222222;
+    --cream: #fff4e9;
+    --grey: #777777;
+}
+
+/* =================================
+   2. NAVIGATION
+================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 7%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #0000000d;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.logo span,
+footer span {
+    color: var(--orange);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--orange);
+}
+
+button {
+    font-family: inherit;
+}
+
+.cart-button {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =================================
+   3. HERO SECTION
+================================= */
+
+.hero {
+    background: var(--cream);
+    padding: 75px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content,
+.hero-image {
+    flex: 1;
+}
+
+.eyebrow {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero-content > p {
+    color: var(--grey);
+    max-width: 480px;
+    margin-bottom: 28px;
+}
+
+.primary-button {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+    background: #e95420;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats strong {
+    font-size: 21px;
+    color: var(--orange);
+}
+
+.stats small {
+    color: var(--grey);
+}
+
+/* =================================
+   4. MENU SECTION
+================================= */
+
+.menu-section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2,
+.about-content h2,
+.contact-section h2 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.section-title p,
+.contact-section p {
+    color: var(--grey);
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+}
+
+.search-input:focus {
+    border-color: var(--orange);
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.category {
+    padding: 11px 20px;
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.category:hover,
+.category.active {
+    background: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+/* =================================
+   5. FOOD CARDS
+================================= */
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px #0000000c;
+    transition: 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px #00000018;
+}
+
+.food-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #eee;
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.food-description {
+    color: var(--grey);
+    font-size: 13px;
+    min-height: 42px;
+}
+
+.food-rating {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.food-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.food-price {
+    font-size: 21px;
+    color: var(--orange);
+    font-weight: bold;
+}
+
+.add-button {
+    background: var(--orange);
+    border: none;
+    color: white;
+    padding: 10px 17px;
+    border-radius: 22px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add-button:hover {
+    background: #e95420;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--grey);
+    padding: 35px;
+    grid-column: 1 / -1;
+}
+
+/* =================================
+   6. ABOUT SECTION
+================================= */
+
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 75px 8%;
+    background: var(--cream);
+}
+
+.about-image,
+.about-content {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.about-content p {
+    color: var(--grey);
+    margin: 15px 0;
+}
+
+.about-content ul {
+    list-style: none;
+    line-height: 2.3;
+    font-weight: bold;
+}
+
+/* =================================
+   7. CONTACT SECTION
+================================= */
+
+.contact-section {
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.contact-section p {
+    margin: 12px 0 25px;
+}
+
+/* =================================
+   8. SHOPPING CART
+================================= */
+
+.cart-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0008;
+    z-index: 200;
+}
+
+.cart-overlay.show {
+    display: block;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 420px;
+    max-width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 201;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.close-button {
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.empty-cart {
+    color: var(--grey);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item h4 {
+    font-size: 14px;
+}
+
+.cart-item p {
+    color: var(--orange);
+    font-weight: bold;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    background: var(--cream);
+    border: none;
+    border-radius: 5px;
+    padding: 6px 11px;
+    cursor: pointer;
+}
+
+.cart-footer {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =================================
+   9. FOOTER
+================================= */
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #bbb;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* =================================
+   10. MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 900px) {
+    .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero,
+    .about-section {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero,
+    .menu-section,
+    .about-section {
+        padding: 45px 6%;
+    }
+
+    .hero-image img {
+        height: 260px;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2,
+    .about-content h2,
+    .contact-section h2 {
+        font-size: 27px;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+
+    .cart-panel {
+        width: 100%;
+    }
+}
